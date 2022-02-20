@@ -41,3 +41,19 @@ AddEventHandler('angelicxs_softcuff:release', function(target)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	TriggerClientEvent('angelicxs_softcuff:unrestrain', target)
 end)
+
+ESX.RegisterUsableItem(Config.ItemName, function(source)
+        
+	local xPlayer = ESX.GetPlayerFromId(source)
+	xPlayer.removeInventoryItem(Config.ItemName, 1)
+	TriggerClientEvent('angelicxs_softcuff:arrestTarget')
+
+end)
+
+ESX.RegisterUsableItem(Config.ReleaseItemName, function(source)
+        
+	local xPlayer = ESX.GetPlayerFromId(source)
+	xPlayer.removeInventoryItem(Config.ReleaseItemName, 1)
+	TriggerClientEvent('angelicxs_softcuff:releaseTarget')
+
+end)
