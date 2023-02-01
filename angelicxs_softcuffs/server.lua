@@ -1,7 +1,6 @@
 ESX = nil
 
-TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-
+ESX = exports["es_extended"]:getSharedObject()
 
 RegisterServerEvent('angelicxs_softcuff:startArrest')
 AddEventHandler('angelicxs_softcuff:startArrest', function(target)
